@@ -3,16 +3,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'register_model.dart';
 export 'register_model.dart';
 
 class RegisterWidget extends StatefulWidget {
-  const RegisterWidget({Key? key}) : super(key: key);
+  const RegisterWidget({super.key});
 
   @override
   _RegisterWidgetState createState() => _RegisterWidgetState();
@@ -62,12 +59,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primary,
       body: Align(
-        alignment: AlignmentDirectional(-0.14, -0.08),
+        alignment: const AlignmentDirectional(-0.14, -0.08),
         child: Container(
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            color: Color(0x19444D59),
+            color: const Color(0x19444D59),
             image: DecorationImage(
               fit: BoxFit.cover,
               image: Image.asset(
@@ -76,13 +73,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
                   child: Image.asset(
                     'assets/images/logoGeekMessaging.png',
                     width: 160.0,
@@ -92,7 +89,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 12.0),
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
@@ -102,7 +99,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
                       child: TextFormField(
                         controller: _model.emailAddressController,
                         focusNode: _model.emailAddressFocusNode,
@@ -111,49 +108,49 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           labelText: 'Email Address',
                           labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                           hintText: 'Email Address',
-                          enabledBorder: OutlineInputBorder(
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedBorder: OutlineInputBorder(
+                          focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          errorBorder: OutlineInputBorder(
+                          errorBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedErrorBorder: OutlineInputBorder(
+                          focusedErrorBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              fontFamily: 'Inter',
                               color: FlutterFlowTheme.of(context).tertiary,
                             ),
                         keyboardType: TextInputType.emailAddress,
@@ -165,7 +162,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
+                      const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
@@ -175,7 +172,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
                       child: TextFormField(
                         controller: _model.passwordController,
                         focusNode: _model.passwordFocusNode,
@@ -184,42 +181,42 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           labelText: 'Choose Password',
                           labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                           hintText: 'Choose Password',
-                          enabledBorder: OutlineInputBorder(
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedBorder: OutlineInputBorder(
+                          focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          errorBorder: OutlineInputBorder(
+                          errorBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedErrorBorder: OutlineInputBorder(
+                          focusedErrorBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
@@ -240,7 +237,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              fontFamily: 'Inter',
                               color: FlutterFlowTheme.of(context).tertiary,
                             ),
                         validator: _model.passwordControllerValidator
@@ -251,7 +248,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
+                      const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
@@ -261,7 +258,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 20.0, 0.0),
                       child: TextFormField(
                         controller: _model.confirmPasswordController,
                         focusNode: _model.confirmPasswordFocusNode,
@@ -270,42 +267,42 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           labelText: 'Confirm Password',
                           labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                           hintText: 'Confirm Password',
-                          enabledBorder: OutlineInputBorder(
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedBorder: OutlineInputBorder(
+                          focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          errorBorder: OutlineInputBorder(
+                          errorBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedErrorBorder: OutlineInputBorder(
+                          focusedErrorBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
@@ -326,7 +323,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              fontFamily: 'Inter',
                               color: FlutterFlowTheme.of(context).tertiary,
                             ),
                         validator: _model.confirmPasswordControllerValidator
@@ -341,7 +338,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     if (_model.passwordController.text !=
                         _model.confirmPasswordController.text) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text(
                             'Passwords don\'t match!',
                           ),
@@ -371,16 +368,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   options: FFButtonOptions(
                     width: 300.0,
                     height: 55.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          fontFamily: 'Inter',
                           color: FlutterFlowTheme.of(context).tertiary,
                         ),
                     elevation: 4.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 2.0,
                     ),
@@ -388,14 +385,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                         child: Text(
                           'Already have an account?',
                           style: FlutterFlowTheme.of(context).bodyMedium,
@@ -406,7 +403,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           context.goNamed(
                             'Login',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 150),
@@ -418,18 +415,18 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         options: FFButtonOptions(
                           width: 100.0,
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x004B39EF),
+                          color: const Color(0x004B39EF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Plus Jakarta Sans',
+                                    fontFamily: 'Inter',
                                     color: Colors.white,
                                   ),
                           elevation: 0.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 0.0,
                           ),
@@ -440,7 +437,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 10.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 10.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       GoRouter.of(context).prepareAuthEvent();
@@ -459,7 +456,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         'chatMain',
                         context.mounted,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.bottomToTop,
                             duration: Duration(milliseconds: 250),
@@ -472,13 +469,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       width: 200.0,
                       height: 55.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       textStyle: FlutterFlowTheme.of(context).titleSmall,
                       elevation: 4.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 2.0,
                       ),

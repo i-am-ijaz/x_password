@@ -125,21 +125,21 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF6F61EF);
-  late Color secondary = const Color(0xFF39D2C0);
+  late Color primary = const Color(0xFF105DFB);
+  late Color secondary = const Color(0xFF8AC7FF);
   late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFFE5E7EB);
-  late Color primaryText = const Color(0xFF15161E);
-  late Color secondaryText = const Color(0xFF606A85);
-  late Color primaryBackground = const Color(0xFFF1F4F8);
+  late Color alternate = const Color(0xFFE0E3E7);
+  late Color primaryText = const Color(0xFF12151C);
+  late Color secondaryText = const Color(0xFF5A5C60);
+  late Color primaryBackground = const Color(0xFFF6F6F6);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color accent1 = const Color(0x4D9489F5);
-  late Color accent2 = const Color(0x4C39D2C0);
+  late Color accent1 = const Color(0x4C105DFB);
+  late Color accent2 = const Color(0x4C8AC7FF);
   late Color accent3 = const Color(0x4CEE8B60);
-  late Color accent4 = const Color(0x9AFFFFFF);
-  late Color success = const Color(0xFF048178);
-  late Color warning = const Color(0xFFFCDC0C);
-  late Color error = const Color(0xFFFF5963);
+  late Color accent4 = const Color(0xB3FFFFFF);
+  late Color success = const Color(0xFF02CA79);
+  late Color warning = const Color(0xFFC96F46);
+  late Color error = const Color(0xFFE65454);
   late Color info = const Color(0xFFFFFFFF);
 }
 
@@ -181,106 +181,106 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Outfit';
+  String get displayLargeFamily => 'Readex Pro';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 57.0,
+        fontSize: 60.0,
       );
-  String get displayMediumFamily => 'Outfit';
+  String get displayMediumFamily => 'Readex Pro';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 45.0,
       );
-  String get displaySmallFamily => 'Outfit';
+  String get displaySmallFamily => 'Readex Pro';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 36.0,
+        fontSize: 32.0,
       );
-  String get headlineLargeFamily => 'Outfit';
+  String get headlineLargeFamily => 'Readex Pro';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Outfit';
+  String get headlineMediumFamily => 'Readex Pro';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 24.0,
+        fontSize: 22.0,
       );
-  String get headlineSmallFamily => 'Outfit';
+  String get headlineSmallFamily => 'Readex Pro';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
-        fontWeight: FontWeight.bold,
-        fontSize: 22.0,
+        fontWeight: FontWeight.w500,
+        fontSize: 20.0,
       );
-  String get titleLargeFamily => 'Outfit';
+  String get titleLargeFamily => 'Readex Pro';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Outfit',
+        'Readex Pro',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Plus Jakarta Sans';
+  String get titleMediumFamily => 'Readex Pro';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Readex Pro',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Plus Jakarta Sans';
+  String get titleSmallFamily => 'Inter';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Inter',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Outfit';
+  String get labelLargeFamily => 'Inter';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Outfit',
+        'Inter',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Outfit';
+  String get labelMediumFamily => 'Inter';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Outfit',
+        'Inter',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Outfit';
+  String get labelSmallFamily => 'Inter';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Outfit',
+        'Inter',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Plus Jakarta Sans';
+  String get bodyLargeFamily => 'Inter';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Inter',
         color: theme.primaryText,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Plus Jakarta Sans';
+  String get bodyMediumFamily => 'Inter';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Plus Jakarta Sans';
+  String get bodySmallFamily => 'Inter';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -295,21 +295,21 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF6F61EF);
-  late Color secondary = const Color(0xFF39D2C0);
+  late Color primary = const Color(0xFF105DFB);
+  late Color secondary = const Color(0xFF8AC7FF);
   late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFF313442);
+  late Color alternate = const Color(0xFF212836);
   late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFFA9ADC6);
-  late Color primaryBackground = const Color(0xFF15161E);
-  late Color secondaryBackground = const Color(0xFF1B1D27);
-  late Color accent1 = const Color(0x4D9489F5);
-  late Color accent2 = const Color(0x4C39D2C0);
+  late Color secondaryText = const Color(0xFFA1A0A3);
+  late Color primaryBackground = const Color(0xFF12151C);
+  late Color secondaryBackground = const Color(0xFF151820);
+  late Color accent1 = const Color(0x4C105DFB);
+  late Color accent2 = const Color(0x4C8AC7FF);
   late Color accent3 = const Color(0x4CEE8B60);
-  late Color accent4 = const Color(0x981D2428);
-  late Color success = const Color(0xFF048178);
-  late Color warning = const Color(0xFFFCDC0C);
-  late Color error = const Color(0xFFFF5963);
+  late Color accent4 = const Color(0xB314181B);
+  late Color success = const Color(0xFF02CA79);
+  late Color warning = const Color(0xFFC96F46);
+  late Color error = const Color(0xFFE65454);
   late Color info = const Color(0xFFFFFFFF);
 }
 

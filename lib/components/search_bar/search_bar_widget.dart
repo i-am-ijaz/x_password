@@ -2,14 +2,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'search_bar_model.dart';
 export 'search_bar_model.dart';
 
 class SearchBarWidget extends StatefulWidget {
-  const SearchBarWidget({Key? key}) : super(key: key);
+  const SearchBarWidget({super.key});
 
   @override
   _SearchBarWidgetState createState() => _SearchBarWidgetState();
@@ -45,7 +42,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 0.0),
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         color: FlutterFlowTheme.of(context).accent3,
@@ -54,7 +51,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -65,7 +62,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                   focusNode: _model.textFieldFocusNode,
                   onChanged: (_) => EasyDebounce.debounce(
                     '_model.textController',
-                    Duration(milliseconds: 2000),
+                    const Duration(milliseconds: 2000),
                     () => setState(() {}),
                   ),
                   obscureText: false,
@@ -73,55 +70,55 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                     labelText: 'Search for friends...',
                     labelStyle:
                         FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Color(0xFF82878C),
+                              fontFamily: 'Inter',
+                              color: const Color(0xFF82878C),
                             ),
                     hintText: 'Find your friend by na',
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: Color(0xFF95A1AC),
+                          fontFamily: 'Inter',
+                          color: const Color(0xFF95A1AC),
                         ),
-                    enabledBorder: UnderlineInputBorder(
+                    enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x004B39EF),
                         width: 1.0,
                       ),
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(4.0),
                         topRight: Radius.circular(4.0),
                       ),
                     ),
-                    focusedBorder: UnderlineInputBorder(
+                    focusedBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 1.0,
                       ),
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(4.0),
                         topRight: Radius.circular(4.0),
                       ),
                     ),
-                    errorBorder: UnderlineInputBorder(
+                    errorBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 1.0,
                       ),
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(4.0),
                         topRight: Radius.circular(4.0),
                       ),
                     ),
-                    focusedErrorBorder: UnderlineInputBorder(
+                    focusedErrorBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 1.0,
                       ),
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(4.0),
                         topRight: Radius.circular(4.0),
                       ),
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.search_rounded,
                       color: Color(0xFF090909),
                     ),
@@ -140,8 +137,8 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                         : null,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        color: Color(0xFF151B1E),
+                        fontFamily: 'Inter',
+                        color: const Color(0xFF151B1E),
                       ),
                   textAlign: TextAlign.start,
                   validator:

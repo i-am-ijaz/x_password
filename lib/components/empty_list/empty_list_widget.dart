@@ -2,14 +2,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'empty_list_model.dart';
 export 'empty_list_model.dart';
 
 class EmptyListWidget extends StatefulWidget {
-  const EmptyListWidget({Key? key}) : super(key: key);
+  const EmptyListWidget({super.key});
 
   @override
   _EmptyListWidgetState createState() => _EmptyListWidgetState();
@@ -45,7 +42,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
+        SizedBox(
           height: 200.0,
           child: Stack(
             children: [
@@ -67,7 +64,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +83,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 0.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -107,13 +104,13 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
           child: FFButtonWidget(
             onPressed: () async {
               context.pushNamed(
                 'MyFriends',
                 extra: <String, dynamic>{
-                  kTransitionInfoKey: TransitionInfo(
+                  kTransitionInfoKey: const TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.bottomToTop,
                     duration: Duration(milliseconds: 220),
@@ -125,9 +122,9 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
             options: FFButtonOptions(
               width: 170.0,
               height: 50.0,
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: Color(0xFF4B39EF),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              color: const Color(0xFF4B39EF),
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Lexend Deca',
                     color: Colors.white,
@@ -135,7 +132,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
                     fontWeight: FontWeight.normal,
                   ),
               elevation: 2.0,
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Colors.transparent,
                 width: 1.0,
               ),

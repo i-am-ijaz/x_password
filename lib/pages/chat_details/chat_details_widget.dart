@@ -1,25 +1,20 @@
-import '/backend/backend.dart';
 import '/components/empty_list/empty_list_widget.dart';
 import '/flutter_flow/chat/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'chat_details_model.dart';
 export 'chat_details_model.dart';
 
 class ChatDetailsWidget extends StatefulWidget {
   const ChatDetailsWidget({
-    Key? key,
+    super.key,
     this.chatUser,
     this.chatRef,
-  }) : super(key: key);
+  });
 
   final UsersRecord? chatUser;
   final DocumentReference? chatRef;
@@ -88,7 +83,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
         child: Container(
           width: 100.0,
           height: 100.0,
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: StreamBuilder<UsersRecord>(
             stream: UsersRecord.getDocument(widget.chatUser!.reference),
             builder: (context, snapshot) {
@@ -114,7 +109,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 36.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
@@ -137,7 +132,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -149,18 +144,18 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                             borderRadius: BorderRadius.circular(60.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 2.0, 2.0, 2.0, 2.0),
                             child: Container(
                               width: 90.0,
                               height: 90.0,
                               clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
                               child: CachedNetworkImage(
-                                fadeInDuration: Duration(milliseconds: 500),
-                                fadeOutDuration: Duration(milliseconds: 500),
+                                fadeInDuration: const Duration(milliseconds: 500),
+                                fadeOutDuration: const Duration(milliseconds: 500),
                                 imageUrl: valueOrDefault<String>(
                                   columnUsersRecord.photoUrl,
                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/dark-mode-chat-xk2sj6/assets/dx4gzvbpilu4/avatar@2x.png',
@@ -181,7 +176,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                         textAlign: TextAlign.center,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Readex Pro',
                                   color: FlutterFlowTheme.of(context).tertiary,
                                 ),
                       ),
@@ -193,12 +188,12 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: Text(
                           columnUsersRecord.email,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Plus Jakarta Sans',
+                                    fontFamily: 'Inter',
                                     color: FlutterFlowTheme.of(context).primary,
                                   ),
                         ),
@@ -210,7 +205,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 24.0, 16.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -221,13 +216,13 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      fontFamily: 'Inter',
                                       fontSize: 10.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   columnUsersRecord.userRole,
@@ -246,7 +241,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 16.0, 16.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -257,13 +252,13 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      fontFamily: 'Inter',
                                       fontSize: 10.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   dateTimeFormat(
@@ -296,7 +291,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
             context.pushNamed(
               'chatMain',
               extra: <String, dynamic>{
-                kTransitionInfoKey: TransitionInfo(
+                kTransitionInfoKey: const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.leftToRight,
                   duration: Duration(milliseconds: 200),
@@ -313,13 +308,13 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
         title: Text(
           widget.chatUser!.displayName,
           style: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Plus Jakarta Sans',
+                fontFamily: 'Inter',
                 color: FlutterFlowTheme.of(context).tertiary,
               ),
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -361,7 +356,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   otherUsersBoxDecoration: BoxDecoration(
-                    color: Color(0xFF4B39EF),
+                    color: const Color(0xFF4B39EF),
                     border: Border.all(
                       color: Colors.transparent,
                     ),
@@ -382,7 +377,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                   ),
                   inputHintTextStyle: GoogleFonts.getFont(
                     'Lexend Deca',
-                    color: Color(0xFF95A1AC),
+                    color: const Color(0xFF95A1AC),
                     fontWeight: FontWeight.normal,
                     fontSize: 14.0,
                   ),
@@ -392,7 +387,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                     fontWeight: FontWeight.normal,
                     fontSize: 14.0,
                   ),
-                  emptyChatWidget: Center(
+                  emptyChatWidget: const Center(
                     child: EmptyListWidget(),
                   ),
                 )

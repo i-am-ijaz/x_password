@@ -5,16 +5,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'complete_profile_model.dart';
 export 'complete_profile_model.dart';
 
 class CompleteProfileWidget extends StatefulWidget {
-  const CompleteProfileWidget({Key? key}) : super(key: key);
+  const CompleteProfileWidget({super.key});
 
   @override
   _CompleteProfileWidgetState createState() => _CompleteProfileWidgetState();
@@ -67,7 +64,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           'Complete Profile',
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -75,9 +72,9 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Align(
-            alignment: AlignmentDirectional(0.00, 0.00),
+            alignment: const AlignmentDirectional(0.00, 0.00),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -143,7 +140,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                   width: 80.0,
                   height: 80.0,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                   ),
                   child: Image.network(
@@ -157,7 +154,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
               controller: _model.displayNameController,
               focusNode: _model.displayNameFocusNode,
@@ -168,28 +165,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 hintText: 'What name do you go by?',
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
@@ -198,7 +195,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 filled: true,
                 fillColor: FlutterFlowTheme.of(context).primaryBackground,
                 contentPadding:
-                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                    const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
               ),
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.name,
@@ -207,7 +204,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
               controller: _model.yourTitleController,
               focusNode: _model.yourTitleFocusNode,
@@ -218,28 +215,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 hintText: 'What do you do?',
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 1.0,
                   ),
@@ -248,7 +245,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 filled: true,
                 fillColor: FlutterFlowTheme.of(context).primaryBackground,
                 contentPadding:
-                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                    const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
               ),
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.emailAddress,
@@ -257,7 +254,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 await currentUserReference!.update(createUsersRecordData(
@@ -273,8 +270,8 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               options: FFButtonOptions(
                 width: 230.0,
                 height: 60.0,
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryText,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Lexend Deca',
@@ -283,7 +280,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                       fontWeight: FontWeight.w500,
                     ),
                 elevation: 3.0,
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
                 ),

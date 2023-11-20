@@ -1,19 +1,14 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/components/empty_list/empty_list_widget.dart';
 import '/flutter_flow/chat/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'chat_main_model.dart';
 export 'chat_main_model.dart';
 
 class ChatMainWidget extends StatefulWidget {
-  const ChatMainWidget({Key? key}) : super(key: key);
+  const ChatMainWidget({super.key});
 
   @override
   _ChatMainWidgetState createState() => _ChatMainWidgetState();
@@ -79,7 +74,7 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
               context.pushNamed(
                 'MyFriends',
                 extra: <String, dynamic>{
-                  kTransitionInfoKey: TransitionInfo(
+                  kTransitionInfoKey: const TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.bottomToTop,
                     duration: Duration(milliseconds: 250),
@@ -101,11 +96,11 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
             title: Text(
               'All Chats',
               style: FlutterFlowTheme.of(context).displaySmall.override(
-                    fontFamily: 'Outfit',
+                    fontFamily: 'Readex Pro',
                     color: FlutterFlowTheme.of(context).tertiary,
                   ),
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 4.0,
           ),
@@ -139,16 +134,16 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
                 return Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.transparent,
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                     child: Builder(
                       builder: (context) {
                         final allChats = containerChatsRecordList.toList();
                         if (allChats.isEmpty) {
-                          return Center(
+                          return const Center(
                             child: EmptyListWidget(),
                           );
                         }
@@ -189,8 +184,7 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
                                   ),
                                   lastChatText: chatInfo.chatPreviewMessage(),
                                   lastChatTime: allChatsItem.lastMessageTime,
-                                  seen: allChatsItem.lastMessageSeenBy!
-                                      .contains(currentUserReference),
+                                  seen: allChatsItem.lastMessageSeenBy.contains(currentUserReference),
                                   title: chatInfo.chatPreviewTitle(),
                                   userProfilePic: chatInfo.chatPreviewPic(),
                                   color: FlutterFlowTheme.of(context)
@@ -217,7 +211,7 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
                                     fontSize: 12.0,
                                   ),
                                   contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
+                                      const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 3.0, 8.0, 3.0),
                                   borderRadius: BorderRadius.circular(0.0),
                                 );

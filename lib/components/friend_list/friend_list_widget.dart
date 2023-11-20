@@ -1,14 +1,11 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'friend_list_model.dart';
 export 'friend_list_model.dart';
 
 class FriendListWidget extends StatefulWidget {
-  const FriendListWidget({Key? key}) : super(key: key);
+  const FriendListWidget({super.key});
 
   @override
   _FriendListWidgetState createState() => _FriendListWidgetState();
@@ -41,7 +38,7 @@ class _FriendListWidgetState extends State<FriendListWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -53,7 +50,7 @@ class _FriendListWidgetState extends State<FriendListWidget> {
               boxShadow: [
                 BoxShadow(
                   color: FlutterFlowTheme.of(context).accent2,
-                  offset: Offset(0.0, 1.0),
+                  offset: const Offset(0.0, 1.0),
                 )
               ],
               border: Border.all(
@@ -65,7 +62,7 @@ class _FriendListWidgetState extends State<FriendListWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +71,7 @@ class _FriendListWidgetState extends State<FriendListWidget> {
                         width: 60.0,
                         height: 60.0,
                         clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
@@ -97,7 +94,7 @@ class _FriendListWidgetState extends State<FriendListWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontFamily: 'Readex Pro',
                                   color: FlutterFlowTheme.of(context).tertiary,
                                 ),
                           ),
@@ -108,14 +105,14 @@ class _FriendListWidgetState extends State<FriendListWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 4.0, 0.0),
                               child: Text(
                                 '[userEmail]',
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      fontFamily: 'Inter',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 12.0,
@@ -129,7 +126,7 @@ class _FriendListWidgetState extends State<FriendListWidget> {
                     ],
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,

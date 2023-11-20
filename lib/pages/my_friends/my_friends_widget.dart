@@ -2,17 +2,14 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_friends_model.dart';
 export 'my_friends_model.dart';
 
 class MyFriendsWidget extends StatefulWidget {
-  const MyFriendsWidget({Key? key}) : super(key: key);
+  const MyFriendsWidget({super.key});
 
   @override
   _MyFriendsWidgetState createState() => _MyFriendsWidgetState();
@@ -58,13 +55,13 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
         title: Text(
           'My Team',
           style: FlutterFlowTheme.of(context).displaySmall.override(
-                fontFamily: 'Outfit',
+                fontFamily: 'Readex Pro',
                 color: FlutterFlowTheme.of(context).tertiary,
               ),
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
             child: FlutterFlowIconButton(
               borderColor: Colors.transparent,
               borderRadius: 30.0,
@@ -118,14 +115,14 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                   List.generate(columnUsersRecordList.length, (columnIndex) {
                 final columnUsersRecord = columnUsersRecordList[columnIndex];
                 return Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -140,7 +137,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                               boxShadow: [
                                 BoxShadow(
                                   color: FlutterFlowTheme.of(context).accent3,
-                                  offset: Offset(0.0, 1.0),
+                                  offset: const Offset(0.0, 1.0),
                                 )
                               ],
                               borderRadius: BorderRadius.circular(8.0),
@@ -172,7 +169,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -190,20 +187,20 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     2.0, 2.0, 2.0, 2.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 50.0,
                                               clipBehavior: Clip.antiAlias,
-                                              decoration: BoxDecoration(
+                                              decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,
                                               ),
                                               child: CachedNetworkImage(
                                                 fadeInDuration:
-                                                    Duration(milliseconds: 500),
+                                                    const Duration(milliseconds: 500),
                                                 fadeOutDuration:
-                                                    Duration(milliseconds: 500),
+                                                    const Duration(milliseconds: 500),
                                                 imageUrl:
                                                     valueOrDefault<String>(
                                                   columnUsersRecord.photoUrl,
@@ -238,7 +235,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 4.0, 4.0, 0.0),
                                                 child: Text(
@@ -247,8 +244,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                        fontFamily: 'Inter',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -265,7 +261,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                                       ],
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 8.0, 0.0),
                                     child: Column(

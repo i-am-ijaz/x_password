@@ -4,13 +4,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'forgot_password_model.dart';
 export 'forgot_password_model.dart';
 
 class ForgotPasswordWidget extends StatefulWidget {
-  const ForgotPasswordWidget({Key? key}) : super(key: key);
+  const ForgotPasswordWidget({super.key});
 
   @override
   _ForgotPasswordWidgetState createState() => _ForgotPasswordWidgetState();
@@ -74,7 +72,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
           'Forgot Password',
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -88,7 +86,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
               child: TextFormField(
                 controller: _model.emailAddressController,
                 focusNode: _model.emailAddressFocusNode,
@@ -99,28 +97,28 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   hintText: 'Please enter a email...',
                   hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0x00000000),
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0x00000000),
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0x00000000),
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0x00000000),
                       width: 1.0,
                     ),
@@ -129,7 +127,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   filled: true,
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
                 ),
                 style: FlutterFlowTheme.of(context).titleSmall,
                 keyboardType: TextInputType.emailAddress,
@@ -138,12 +136,12 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   if (_model.emailAddressController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text(
                           'Email required!',
                         ),
@@ -161,9 +159,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 options: FFButtonOptions(
                   width: 230.0,
                   height: 60.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryText,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend Deca',
@@ -172,7 +170,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         fontWeight: FontWeight.w500,
                       ),
                   elevation: 3.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
