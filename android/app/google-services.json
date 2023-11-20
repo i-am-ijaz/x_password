@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "815239986420",
+    "project_id": "x-password-616i08",
+    "storage_bucket": "x-password-616i08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815239986420:android:814755f88383b472c332a1",
+        "android_client_info": {
+          "package_name": "com.xmartandroid.xpassword"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxHTLFET5Ev5U9tzdufuvGTuKRmvgacq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
