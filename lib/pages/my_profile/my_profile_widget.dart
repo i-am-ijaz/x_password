@@ -284,7 +284,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: 'Outfit',
                                       color: Colors.white,
                                     ),
                               ),
@@ -308,7 +308,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
                                       color:
-                                          FlutterFlowTheme.of(context).grayIcon,
+                                          FlutterFlowTheme.of(context).accent3,
                                     ),
                               ),
                             ),
@@ -598,8 +598,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                       .secondaryBackground,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: FlutterFlowTheme.of(context)
-                                          .background,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       offset: Offset(0.0, 1.0),
                                     )
                                   ],
@@ -678,8 +678,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                     .secondaryBackground,
                                 boxShadow: [
                                   BoxShadow(
-                                    color:
-                                        FlutterFlowTheme.of(context).background,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],

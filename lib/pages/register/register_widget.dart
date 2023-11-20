@@ -60,7 +60,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).dark900,
+      backgroundColor: FlutterFlowTheme.of(context).primary,
       body: Align(
         alignment: AlignmentDirectional(-0.14, -0.08),
         child: Container(
@@ -234,7 +234,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               _model.passwordVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: FlutterFlowTheme.of(context).grayDark,
+                              color: FlutterFlowTheme.of(context).accent3,
                               size: 24.0,
                             ),
                           ),
@@ -320,7 +320,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               _model.confirmPasswordVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: FlutterFlowTheme.of(context).grayDark,
+                              color: FlutterFlowTheme.of(context).accent1,
                               size: 24.0,
                             ),
                           ),

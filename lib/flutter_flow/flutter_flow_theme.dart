@@ -125,21 +125,21 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B986C);
-  late Color secondary = const Color(0xFF928163);
-  late Color tertiary = const Color(0xFF6D604A);
-  late Color alternate = const Color(0xFFC8D7E4);
-  late Color primaryText = const Color(0xFF0B191E);
-  late Color secondaryText = const Color(0xFF384E58);
+  late Color primary = const Color(0xFF6F61EF);
+  late Color secondary = const Color(0xFF39D2C0);
+  late Color tertiary = const Color(0xFFEE8B60);
+  late Color alternate = const Color(0xFFE5E7EB);
+  late Color primaryText = const Color(0xFF15161E);
+  late Color secondaryText = const Color(0xFF606A85);
   late Color primaryBackground = const Color(0xFFF1F4F8);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color accent1 = const Color(0x4D4B986C);
-  late Color accent2 = const Color(0x4D928163);
-  late Color accent3 = const Color(0x4C6D604A);
-  late Color accent4 = const Color(0xCDFFFFFF);
-  late Color success = const Color(0xFF336A4A);
-  late Color warning = const Color(0xFFF3C344);
-  late Color error = const Color(0xFFC4454D);
+  late Color accent1 = const Color(0x4D9489F5);
+  late Color accent2 = const Color(0x4C39D2C0);
+  late Color accent3 = const Color(0x4CEE8B60);
+  late Color accent4 = const Color(0x9AFFFFFF);
+  late Color success = const Color(0xFF048178);
+  late Color warning = const Color(0xFFFCDC0C);
+  late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 }
 
@@ -181,51 +181,51 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Urbanist';
+  String get displayLargeFamily => 'Outfit';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 52.0,
+        fontSize: 57.0,
       );
-  String get displayMediumFamily => 'Urbanist';
+  String get displayMediumFamily => 'Outfit';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 44.0,
+        fontSize: 45.0,
       );
-  String get displaySmallFamily => 'Urbanist';
+  String get displaySmallFamily => 'Outfit';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Urbanist';
+  String get headlineLargeFamily => 'Outfit';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 36.0,
+        fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Urbanist';
+  String get headlineMediumFamily => 'Outfit';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Urbanist';
+  String get headlineSmallFamily => 'Outfit';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
       );
-  String get titleLargeFamily => 'Urbanist';
+  String get titleLargeFamily => 'Outfit';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Urbanist',
+        'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
@@ -234,33 +234,33 @@ class ThemeTypography extends Typography {
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Plus Jakarta Sans',
         color: theme.info,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
   String get titleSmallFamily => 'Plus Jakarta Sans';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Plus Jakarta Sans',
         color: theme.info,
-        fontWeight: FontWeight.w600,
-        fontSize: 18.0,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Plus Jakarta Sans';
+  String get labelLargeFamily => 'Outfit';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Outfit',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Plus Jakarta Sans';
+  String get labelMediumFamily => 'Outfit';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Outfit',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Plus Jakarta Sans';
+  String get labelSmallFamily => 'Outfit';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+        'Outfit',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
@@ -269,21 +269,20 @@ class ThemeTypography extends Typography {
   TextStyle get bodyLarge => GoogleFonts.getFont(
         'Plus Jakarta Sans',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
   String get bodyMediumFamily => 'Plus Jakarta Sans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
         'Plus Jakarta Sans',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
   String get bodySmallFamily => 'Plus Jakarta Sans';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Plus Jakarta Sans',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
 }
@@ -296,21 +295,21 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B986C);
-  late Color secondary = const Color(0xFF928163);
-  late Color tertiary = const Color(0xFF6D604A);
-  late Color alternate = const Color(0xFF17282E);
+  late Color primary = const Color(0xFF6F61EF);
+  late Color secondary = const Color(0xFF39D2C0);
+  late Color tertiary = const Color(0xFFEE8B60);
+  late Color alternate = const Color(0xFF313442);
   late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF658593);
-  late Color primaryBackground = const Color(0xFF0B191E);
-  late Color secondaryBackground = const Color(0xFF0D1E23);
-  late Color accent1 = const Color(0x4D4B986C);
-  late Color accent2 = const Color(0x4D928163);
-  late Color accent3 = const Color(0x4C6D604A);
-  late Color accent4 = const Color(0xB20B191E);
-  late Color success = const Color(0xFF336A4A);
-  late Color warning = const Color(0xFFF3C344);
-  late Color error = const Color(0xFFC4454D);
+  late Color secondaryText = const Color(0xFFA9ADC6);
+  late Color primaryBackground = const Color(0xFF15161E);
+  late Color secondaryBackground = const Color(0xFF1B1D27);
+  late Color accent1 = const Color(0x4D9489F5);
+  late Color accent2 = const Color(0x4C39D2C0);
+  late Color accent3 = const Color(0x4CEE8B60);
+  late Color accent4 = const Color(0x981D2428);
+  late Color success = const Color(0xFF048178);
+  late Color warning = const Color(0xFFFCDC0C);
+  late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 }
 

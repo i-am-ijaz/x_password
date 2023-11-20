@@ -88,9 +88,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
         child: Container(
           width: 100.0,
           height: 100.0,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).dark900,
-          ),
+          decoration: BoxDecoration(),
           child: StreamBuilder<UsersRecord>(
             stream: UsersRecord.getDocument(widget.chatUser!.reference),
             builder: (context, snapshot) {
@@ -124,7 +122,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                           buttonSize: 48.0,
                           icon: Icon(
                             Icons.close_rounded,
-                            color: FlutterFlowTheme.of(context).grayIcon,
+                            color: FlutterFlowTheme.of(context).tertiary,
                             size: 30.0,
                           ),
                           onPressed: () async {
@@ -183,7 +181,7 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                         textAlign: TextAlign.center,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: 'Outfit',
                                   color: FlutterFlowTheme.of(context).tertiary,
                                 ),
                       ),
@@ -353,10 +351,10 @@ class _ChatDetailsWidgetState extends State<ChatDetailsWidget> {
                   chatInfo: snapshot.data!,
                   allowImages: true,
                   backgroundColor:
-                      FlutterFlowTheme.of(context).primaryBackground,
+                      FlutterFlowTheme.of(context).secondaryBackground,
                   timeDisplaySetting: TimeDisplaySetting.visibleOnTap,
                   currentUserBoxDecoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).dark900,
+                    color: FlutterFlowTheme.of(context).primary,
                     border: Border.all(
                       color: Colors.transparent,
                     ),

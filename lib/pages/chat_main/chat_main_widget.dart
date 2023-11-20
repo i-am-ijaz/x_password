@@ -101,7 +101,7 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
             title: Text(
               'All Chats',
               style: FlutterFlowTheme.of(context).displaySmall.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily: 'Outfit',
                     color: FlutterFlowTheme.of(context).tertiary,
                   ),
             ),
@@ -196,7 +196,7 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   unreadColor:
-                                      FlutterFlowTheme.of(context).tertiaryOld,
+                                      FlutterFlowTheme.of(context).primary,
                                   titleTextStyle: GoogleFonts.getFont(
                                     'Lexend Deca',
                                     color: FlutterFlowTheme.of(context)
@@ -206,15 +206,13 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
                                   ),
                                   dateTextStyle: GoogleFonts.getFont(
                                     'Lexend Deca',
-                                    color:
-                                        FlutterFlowTheme.of(context).grayIcon,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 14.0,
                                   ),
                                   previewTextStyle: GoogleFonts.getFont(
                                     'Lexend Deca',
-                                    color:
-                                        FlutterFlowTheme.of(context).grayIcon,
+                                    color: FlutterFlowTheme.of(context).accent3,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 12.0,
                                   ),

@@ -49,10 +49,10 @@ class _FriendListWidgetState extends State<FriendListWidget> {
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: 80.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).background,
+              color: FlutterFlowTheme.of(context).accent2,
               boxShadow: [
                 BoxShadow(
-                  color: FlutterFlowTheme.of(context).dark900,
+                  color: FlutterFlowTheme.of(context).accent2,
                   offset: Offset(0.0, 1.0),
                 )
               ],

@@ -58,7 +58,7 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
         title: Text(
           'My Team',
           style: FlutterFlowTheme.of(context).displaySmall.override(
-                fontFamily: 'Urbanist',
+                fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,
               ),
         ),
@@ -136,10 +136,10 @@ class _MyFriendsWidgetState extends State<MyFriendsWidget> {
                             width: MediaQuery.sizeOf(context).width * 0.95,
                             height: 70.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).dark900,
+                              color: FlutterFlowTheme.of(context).accent3,
                               boxShadow: [
                                 BoxShadow(
-                                  color: FlutterFlowTheme.of(context).dark900,
+                                  color: FlutterFlowTheme.of(context).accent3,
                                   offset: Offset(0.0, 1.0),
                                 )
                               ],
