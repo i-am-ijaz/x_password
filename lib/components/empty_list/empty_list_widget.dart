@@ -108,7 +108,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
           child: FFButtonWidget(
             onPressed: () async {
               context.pushNamed(
-                'MyFriends',
+                'createEditPassword',
                 extra: <String, dynamic>{
                   kTransitionInfoKey: const TransitionInfo(
                     hasTransition: true,

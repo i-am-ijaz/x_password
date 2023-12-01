@@ -264,7 +264,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                   createdTime: getCurrentTimestamp,
                 ));
 
-                context.pushNamed('chatMain');
+                context.pushNamed('passwords');
               },
               text: 'Save Profile',
               options: FFButtonOptions(

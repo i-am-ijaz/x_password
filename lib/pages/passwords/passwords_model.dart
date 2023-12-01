@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'my_friends_widget.dart' show MyFriendsWidget;
+import 'passwords_widget.dart' show PasswordsWidget;
 import 'package:flutter/material.dart';
 
-class MyFriendsModel extends FlutterFlowModel<MyFriendsWidget> {
+class PasswordsModel extends FlutterFlowModel<PasswordsWidget> {
   /// Initialization and disposal methods.
 
   @override

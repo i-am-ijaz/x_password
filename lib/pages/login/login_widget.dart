@@ -253,7 +253,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     return;
                   }
 
-                  context.pushNamedAuth('chatMain', context.mounted);
+                  context.pushNamedAuth('passwords', context.mounted);
                 },
                 text: 'Log In',
                 options: FFButtonOptions(
@@ -281,39 +281,43 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed(
-                          'Register',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 150),
-                            ),
-                          },
-                        );
-                      },
-                      text: 'Create Account',
-                      options: FFButtonOptions(
-                        width: 150.0,
-                        height: 40.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0x004B39EF),
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Inter',
-                                  color: Colors.white,
-                                ),
-                        elevation: 0.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 0.0,
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 40.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed(
+                            'Register',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: const TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 150),
+                              ),
+                            },
+                          );
+                        },
+                        text: 'Create Account',
+                        options: FFButtonOptions(
+                          width: 150.0,
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0x004B39EF),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                  ),
+                          elevation: 0.0,
+                          borderSide: const BorderSide(
+                            color: Colors.transparent,
+                            width: 0.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
                   ],
@@ -336,7 +340,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall,
                     elevation: 0.0,
                     borderSide: const BorderSide(
-                      width: 2.0,
+                      width: 0.0,
                     ),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
@@ -363,7 +367,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 return;
                               }
 
-                              context.goNamedAuth('chatMain', context.mounted);
+                              context.goNamedAuth('passwords', context.mounted);
                             },
                             text: 'Sign in with Google',
                             icon: const Icon(

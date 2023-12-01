@@ -453,7 +453,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       ));
 
                       context.pushNamedAuth(
-                        'chatMain',
+                        'passwords',
                         context.mounted,
                         extra: <String, dynamic>{
                           kTransitionInfoKey: const TransitionInfo(

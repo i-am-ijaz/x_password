@@ -92,9 +92,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const RegisterWidget(),
         ),
         FFRoute(
-          name: 'MyFriends',
-          path: '/myFriends',
-          builder: (context, params) => const MyFriendsWidget(),
+          name: 'createEditPassword',
+          path: '/createEditPassword',
+          builder: (context, params) => const CreateEditPasswordWidget(),
         ),
         FFRoute(
           name: 'completeProfile',
@@ -107,23 +107,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'chatDetails',
-          path: '/chatDetails',
-          asyncParams: {
-            'chatUser': getDoc(['users'], UsersRecord.fromSnapshot),
-          },
-          builder: (context, params) => ChatDetailsWidget(
-            chatUser: params.getParam('chatUser', ParamType.Document),
-            chatRef: params.getParam(
-                'chatRef', ParamType.DocumentReference, false, ['chats']),
-          ),
-        ),
-        FFRoute(
-          name: 'chatMain',
-          path: '/chatMain',
+          name: 'passwords',
+          path: '/passwords',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'chatMain')
-              : const ChatMainWidget(),
+              ? const NavBarPage(initialPage: 'passwords')
+              : const PasswordsWidget(),
         ),
         FFRoute(
           name: 'changePassword',
