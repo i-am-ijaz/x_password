@@ -223,7 +223,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               _model.passwordVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).accent1,
                               size: 24.0,
                             ),
                           ),
@@ -394,7 +394,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .override(
                                       fontFamily: 'Inter',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                          .primaryBackground,
                                     ),
                                 elevation: 4.0,
                                 borderSide: const BorderSide(
