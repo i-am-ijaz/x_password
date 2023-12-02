@@ -242,16 +242,16 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                     if (widget.password != null) {
                       await widget.password!.reference
                           .update(createPasswordsRecordData(
-                        webAddress: '',
-                        usernameEmail: '',
-                        password: '',
+                        webAddress: _model.webAddressFieldController.text,
+                        usernameEmail: _model.usernameEmailFieldController.text,
+                        password: _model.passwordFieldController.text,
                       ));
                     } else {
                       await PasswordsRecord.createDoc(currentUserReference!)
                           .set(createPasswordsRecordData(
-                        webAddress: '',
-                        usernameEmail: '',
-                        password: '',
+                        webAddress: _model.webAddressFieldController.text,
+                        usernameEmail: _model.usernameEmailFieldController.text,
+                        password: _model.passwordFieldController.text,
                       ));
                     }
 
