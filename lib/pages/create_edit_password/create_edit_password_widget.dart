@@ -31,23 +31,16 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
     super.initState();
     _model = createModel(context, () => CreateEditPasswordModel());
 
-    _model.textController1 ??= TextEditingController(
-        text: widget.password!.hasWebAddress()
-            ? valueOrDefault<String>(
-                widget.password?.webAddress,
-                '""',
-              )
-            : '');
+    _model.textController1 ??=
+        TextEditingController(text: widget.password?.webAddress);
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController(
-        text: widget.password!.hasUsernameEmail()
-            ? widget.password?.usernameEmail
-            : '');
+    _model.textController2 ??=
+        TextEditingController(text: widget.password?.usernameEmail);
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController(
-        text: widget.password!.hasPassword() ? widget.password?.password : '');
+    _model.textController3 ??=
+        TextEditingController(text: widget.password?.password);
     _model.textFieldFocusNode3 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -141,7 +134,6 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
               child: TextFormField(
                 controller: _model.textController2,
                 focusNode: _model.textFieldFocusNode2,
-                autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Email/Username',
@@ -186,7 +178,6 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
               child: TextFormField(
                 controller: _model.textController3,
                 focusNode: _model.textFieldFocusNode3,
-                autofocus: true,
                 obscureText: !_model.passwordVisibility,
                 decoration: InputDecoration(
                   labelText: 'Password',
