@@ -240,6 +240,11 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (widget.password != null) {
+                      if (_model.formKey.currentState == null ||
+                          !_model.formKey.currentState!.validate()) {
+                        return;
+                      }
+
                       await widget.password!.reference
                           .update(createPasswordsRecordData(
                         webAddress: _model.webAddressFieldController.text,
@@ -247,6 +252,11 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                         password: _model.passwordFieldController.text,
                       ));
                     } else {
+                      if (_model.formKey.currentState == null ||
+                          !_model.formKey.currentState!.validate()) {
+                        return;
+                      }
+
                       await PasswordsRecord.createDoc(currentUserReference!)
                           .set(createPasswordsRecordData(
                         webAddress: _model.webAddressFieldController.text,
