@@ -6,37 +6,75 @@ class CreateEditPasswordModel
     extends FlutterFlowModel<CreateEditPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? textController3Validator;
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for WebAddressField widget.
+  FocusNode? webAddressFieldFocusNode;
+  TextEditingController? webAddressFieldController;
+  String? Function(BuildContext, String?)? webAddressFieldControllerValidator;
+  String? _webAddressFieldControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Please enter webaddress';
+    }
+
+    if (!RegExp(kTextValidatorWebsiteRegex).hasMatch(val)) {
+      return 'Has to be a valid website.';
+    }
+    return null;
+  }
+
+  // State field(s) for UsernameEmailField widget.
+  FocusNode? usernameEmailFieldFocusNode;
+  TextEditingController? usernameEmailFieldController;
+  String? Function(BuildContext, String?)?
+      usernameEmailFieldControllerValidator;
+  String? _usernameEmailFieldControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Please enter usersname / email';
+    }
+
+    return null;
+  }
+
+  // State field(s) for PasswordField widget.
+  FocusNode? passwordFieldFocusNode;
+  TextEditingController? passwordFieldController;
+  late bool passwordFieldVisibility;
+  String? Function(BuildContext, String?)? passwordFieldControllerValidator;
+  String? _passwordFieldControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Please enter password';
+    }
+
+    if (val.length < 8) {
+      return 'Requires at least 8 characters.';
+    }
+
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility = false;
+    webAddressFieldControllerValidator = _webAddressFieldControllerValidator;
+    usernameEmailFieldControllerValidator =
+        _usernameEmailFieldControllerValidator;
+    passwordFieldVisibility = false;
+    passwordFieldControllerValidator = _passwordFieldControllerValidator;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    webAddressFieldFocusNode?.dispose();
+    webAddressFieldController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    usernameEmailFieldFocusNode?.dispose();
+    usernameEmailFieldController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    passwordFieldFocusNode?.dispose();
+    passwordFieldController?.dispose();
   }
 
   /// Action blocks are added here.

@@ -31,17 +31,17 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
     super.initState();
     _model = createModel(context, () => CreateEditPasswordModel());
 
-    _model.textController1 ??=
+    _model.webAddressFieldController ??=
         TextEditingController(text: widget.password?.webAddress);
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.webAddressFieldFocusNode ??= FocusNode();
 
-    _model.textController2 ??=
+    _model.usernameEmailFieldController ??=
         TextEditingController(text: widget.password?.usernameEmail);
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.usernameEmailFieldFocusNode ??= FocusNode();
 
-    _model.textController3 ??=
+    _model.passwordFieldController ??=
         TextEditingController(text: widget.password?.password);
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.passwordFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -82,197 +82,205 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
         centerTitle: false,
         elevation: 2.0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-              child: TextFormField(
-                controller: _model.textController1,
-                focusNode: _model.textFieldFocusNode1,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Web Address',
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
-                validator: _model.textController1Validator.asValidator(context),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-              child: TextFormField(
-                controller: _model.textController2,
-                focusNode: _model.textFieldFocusNode2,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Email/Username',
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
-                keyboardType: TextInputType.emailAddress,
-                validator: _model.textController2Validator.asValidator(context),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-              child: TextFormField(
-                controller: _model.textController3,
-                focusNode: _model.textFieldFocusNode3,
-                obscureText: !_model.passwordVisibility,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  focusedErrorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).error,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  suffixIcon: InkWell(
-                    onTap: () => setState(
-                      () => _model.passwordVisibility =
-                          !_model.passwordVisibility,
-                    ),
-                    focusNode: FocusNode(skipTraversal: true),
-                    child: Icon(
-                      _model.passwordVisibility
-                          ? Icons.visibility_outlined
-                          : Icons.visibility_off_outlined,
-                      size: 22,
-                    ),
-                  ),
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
-                validator: _model.textController3Validator.asValidator(context),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  if (widget.password != null) {
-                    await PasswordsRecord.createDoc(currentUserReference!)
-                        .set(createPasswordsRecordData(
-                      webAddress: '',
-                      usernameEmail: '',
-                      password: '',
-                    ));
-                  } else {
-                    await widget.password!.reference
-                        .update(createPasswordsRecordData(
-                      webAddress: '',
-                      usernameEmail: '',
-                      password: '',
-                    ));
-                  }
-
-                  context.pushNamed('passwords');
-                },
-                text: widget.password != null ? 'Save' : 'Create',
-                options: FFButtonOptions(
-                  width: double.infinity,
-                  height: 55.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Inter',
-                        color: Colors.white,
+      body: Form(
+        key: _model.formKey,
+        autovalidateMode: AutovalidateMode.disabled,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                child: TextFormField(
+                  controller: _model.webAddressFieldController,
+                  focusNode: _model.webAddressFieldFocusNode,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Web Address',
+                    labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 2.0,
                       ),
-                  elevation: 3.0,
-                  borderSide: const BorderSide(
-                    color: Colors.transparent,
-                    width: 1.0,
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(30.0),
+                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  validator: _model.webAddressFieldControllerValidator
+                      .asValidator(context),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                child: TextFormField(
+                  controller: _model.usernameEmailFieldController,
+                  focusNode: _model.usernameEmailFieldFocusNode,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Email/Username',
+                    labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: _model.usernameEmailFieldControllerValidator
+                      .asValidator(context),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                child: TextFormField(
+                  controller: _model.passwordFieldController,
+                  focusNode: _model.passwordFieldFocusNode,
+                  obscureText: !_model.passwordFieldVisibility,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    suffixIcon: InkWell(
+                      onTap: () => setState(
+                        () => _model.passwordFieldVisibility =
+                            !_model.passwordFieldVisibility,
+                      ),
+                      focusNode: FocusNode(skipTraversal: true),
+                      child: Icon(
+                        _model.passwordFieldVisibility
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                        size: 22,
+                      ),
+                    ),
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  validator: _model.passwordFieldControllerValidator
+                      .asValidator(context),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    if (widget.password != null) {
+                      await PasswordsRecord.createDoc(currentUserReference!)
+                          .set(createPasswordsRecordData(
+                        webAddress: '',
+                        usernameEmail: '',
+                        password: '',
+                      ));
+                    } else {
+                      await widget.password!.reference
+                          .update(createPasswordsRecordData(
+                        webAddress: '',
+                        usernameEmail: '',
+                        password: '',
+                      ));
+                    }
+
+                    context.pushNamed('passwords');
+                  },
+                  text: widget.password != null ? 'Save' : 'Create',
+                  options: FFButtonOptions(
+                    width: double.infinity,
+                    height: 55.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Inter',
+                          color: Colors.white,
+                        ),
+                    elevation: 3.0,
+                    borderSide: const BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
