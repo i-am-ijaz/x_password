@@ -37,19 +37,17 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 widget.password?.webAddress,
                 '""',
               )
-            : '""');
+            : '');
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController(
         text: widget.password!.hasUsernameEmail()
             ? widget.password?.usernameEmail
-            : '""');
+            : '');
     _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController3 ??= TextEditingController(
-        text: widget.password!.hasPassword()
-            ? widget.password?.password
-            : '""');
+        text: widget.password!.hasPassword() ? widget.password?.password : '');
     _model.textFieldFocusNode3 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -78,7 +76,8 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primary,
-        automaticallyImplyLeading: false,
+        iconTheme: IconThemeData(color: FlutterFlowTheme.of(context).info),
+        automaticallyImplyLeading: true,
         title: Text(
           widget.password!.hasWebAddress() ? 'Edit' : 'Create',
           style: FlutterFlowTheme.of(context).displaySmall.override(
