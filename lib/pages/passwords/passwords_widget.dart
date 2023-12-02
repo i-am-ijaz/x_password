@@ -121,7 +121,9 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                 color: Colors.transparent,
               ),
               child: StreamBuilder<List<PasswordsRecord>>(
-                stream: queryPasswordsRecord(),
+                stream: queryPasswordsRecord(
+                  parent: passwordsUsersRecord.reference,
+                ),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
