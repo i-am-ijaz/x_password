@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -61,9 +60,8 @@ class _LoginWidgetState extends State<LoginWidget> {
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            color: const Color(0x19444D59),
             image: DecorationImage(
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.cover,
               image: Image.asset(
                 'assets/images/launchScreen@3x.png',
               ).image,
@@ -101,11 +99,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                         controller: _model.emailTextController,
                         focusNode: _model.textFieldFocusNode1,
                         obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: 'Email Address',
-                          labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                        decoration: const InputDecoration(
                           hintText: 'Email Address',
-                          enabledBorder: const OutlineInputBorder(
+                          enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
@@ -115,7 +111,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedBorder: const OutlineInputBorder(
+                          focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
@@ -125,7 +121,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          errorBorder: const OutlineInputBorder(
+                          errorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
@@ -135,7 +131,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedErrorBorder: const OutlineInputBorder(
+                          focusedErrorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
@@ -175,7 +171,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                         focusNode: _model.textFieldFocusNode2,
                         obscureText: !_model.passwordVisibility,
                         decoration: InputDecoration(
-                          labelText: 'Password',
                           labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                           hintText: 'Password',
                           enabledBorder: const OutlineInputBorder(
@@ -394,12 +389,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 8.0, 0.0),
                                 color: Colors.white,
-                                textStyle: GoogleFonts.getFont(
-                                  'Roboto',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 17.0,
-                                ),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
                                 elevation: 4.0,
                                 borderSide: const BorderSide(
                                   color: Colors.transparent,

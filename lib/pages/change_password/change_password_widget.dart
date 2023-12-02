@@ -92,7 +92,6 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                 focusNode: _model.emailAddressFocusNode,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Your Email Address',
                   labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                   hintText: 'Please enter a email...',
                   hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -102,8 +101,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                      color: Color(0x00000000),
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(50.0),

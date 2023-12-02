@@ -160,13 +160,12 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               focusNode: _model.displayNameFocusNode,
               obscureText: false,
               decoration: InputDecoration(
-                labelText: 'Your Name',
                 labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                 hintText: 'What name do you go by?',
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Color(0x00000000),
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).primary,
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),
@@ -210,13 +209,12 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               focusNode: _model.yourTitleFocusNode,
               obscureText: false,
               decoration: InputDecoration(
-                labelText: 'Your Title',
                 labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                 hintText: 'What do you do?',
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Color(0x00000000),
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).primary,
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(50.0),

@@ -405,7 +405,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Icon(
-                                            Icons.nights_stay,
+                                            Icons.dark_mode,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             size: 20.0,
@@ -761,35 +761,46 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            FFButtonWidget(
-                              onPressed: () async {
-                                GoRouter.of(context).prepareAuthEvent();
-                                await authManager.signOut();
-                                GoRouter.of(context).clearRedirectLocation();
-
-                                context.goNamedAuth('Login', context.mounted);
-                              },
-                              text: 'Log Out',
-                              options: FFButtonOptions(
-                                width: 90.0,
-                                height: 40.0,
+                            Expanded(
+                              child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color: FlutterFlowTheme.of(context).info,
+                                    24.0, 0.0, 24.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    GoRouter.of(context).prepareAuthEvent();
+                                    await authManager.signOut();
+                                    GoRouter.of(context)
+                                        .clearRedirectLocation();
+
+                                    context.goNamedAuth(
+                                        'Login', context.mounted);
+                                  },
+                                  text: 'Log Out',
+                                  options: FFButtonOptions(
+                                    width: 90.0,
+                                    height: 55.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
                                     ),
-                                elevation: 3.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
                                 ),
-                                borderRadius: BorderRadius.circular(30.0),
                               ),
                             ),
                           ],
