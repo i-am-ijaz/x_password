@@ -106,17 +106,8 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
           child: FFButtonWidget(
-            onPressed: () async {
-              context.pushNamed(
-                'createEditPassword',
-                extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
-                    hasTransition: true,
-                    transitionType: PageTransitionType.bottomToTop,
-                    duration: Duration(milliseconds: 220),
-                  ),
-                },
-              );
+            onPressed: () {
+              print('Button pressed ...');
             },
             text: 'Find Friends',
             options: FFButtonOptions(

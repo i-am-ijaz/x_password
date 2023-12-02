@@ -94,7 +94,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'createEditPassword',
           path: '/createEditPassword',
-          builder: (context, params) => const CreateEditPasswordWidget(),
+          asyncParams: {
+            'password':
+                getDoc(['users', 'passwords'], PasswordsRecord.fromSnapshot),
+          },
+          builder: (context, params) => CreateEditPasswordWidget(
+            password: params.getParam('password', ParamType.Document),
+          ),
         ),
         FFRoute(
           name: 'completeProfile',

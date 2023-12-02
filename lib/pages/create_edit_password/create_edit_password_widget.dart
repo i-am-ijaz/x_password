@@ -9,7 +9,12 @@ import 'create_edit_password_model.dart';
 export 'create_edit_password_model.dart';
 
 class CreateEditPasswordWidget extends StatefulWidget {
-  const CreateEditPasswordWidget({super.key});
+  const CreateEditPasswordWidget({
+    super.key,
+    required this.password,
+  });
+
+  final PasswordsRecord? password;
 
   @override
   _CreateEditPasswordWidgetState createState() =>
@@ -26,13 +31,25 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
     super.initState();
     _model = createModel(context, () => CreateEditPasswordModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.textController1 ??= TextEditingController(
+        text: widget.password!.hasWebAddress()
+            ? valueOrDefault<String>(
+                widget.password?.webAddress,
+                '""',
+              )
+            : '""');
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.textController2 ??= TextEditingController(
+        text: widget.password!.hasUsernameEmail()
+            ? widget.password?.usernameEmail
+            : '""');
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
+    _model.textController3 ??= TextEditingController(
+        text: widget.password!.hasPassword()
+            ? widget.password?.password
+            : '""');
     _model.textFieldFocusNode3 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -63,7 +80,7 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         title: Text(
-          'Create',
+          widget.password!.hasWebAddress() ? 'Edit' : 'Create',
           style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Readex Pro',
                 color: FlutterFlowTheme.of(context).tertiary,
@@ -82,7 +99,6 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
               child: TextFormField(
                 controller: _model.textController1,
                 focusNode: _model.textFieldFocusNode1,
-                autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Web Address',
@@ -227,18 +243,25 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
               padding: const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
-                  // CreateEdit
-
-                  await PasswordsRecord.createDoc(currentUserReference!)
-                      .set(createPasswordsRecordData(
-                    webAddress: _model.textController1.text,
-                    usernameEmail: _model.textController2.text,
-                    password: _model.textController3.text,
-                  ));
+                  if (widget.password!.hasPassword()) {
+                    await PasswordsRecord.createDoc(currentUserReference!)
+                        .set(createPasswordsRecordData(
+                      webAddress: '',
+                      usernameEmail: '',
+                      password: '',
+                    ));
+                  } else {
+                    await widget.password!.reference
+                        .update(createPasswordsRecordData(
+                      webAddress: '',
+                      usernameEmail: '',
+                      password: '',
+                    ));
+                  }
 
                   context.pushNamed('passwords');
                 },
-                text: 'Create',
+                text: widget.password!.hasPassword() ? 'Save' : 'Create',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 55.0,
