@@ -521,7 +521,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .info,
                                             size: 24.0,
                                           ),
                                         ),
@@ -534,7 +534,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .primary,
                                             boxShadow: const [
                                               BoxShadow(
                                                 blurRadius: 4.0,
@@ -545,6 +545,12 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                             borderRadius:
                                                 BorderRadius.circular(30.0),
                                             shape: BoxShape.rectangle,
+                                          ),
+                                          child: Icon(
+                                            Icons.dark_mode,
+                                            color: FlutterFlowTheme.of(context)
+                                                .info,
+                                            size: 24.0,
                                           ),
                                         ).animateOnActionTrigger(
                                             animationsMap[
