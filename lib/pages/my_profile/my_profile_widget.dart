@@ -378,8 +378,13 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                               children: [
                                 Text(
                                   'Switch to Dark Mode',
-                                  style:
-                                      FlutterFlowTheme.of(context).titleSmall,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
                                 ),
                                 Container(
                                   width: 80.0,
@@ -402,7 +407,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                           child: Icon(
                                             Icons.nights_stay,
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .primaryText,
                                             size: 20.0,
                                           ),
                                         ),
@@ -415,7 +420,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .primary,
                                             boxShadow: const [
                                               BoxShadow(
                                                 blurRadius: 4.0,
@@ -432,6 +437,16 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                 'containerOnActionTriggerAnimation1']!,
                                             hasBeenTriggered:
                                                 hasContainerTriggered1),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(-0.65, 0.00),
+                                        child: Icon(
+                                          Icons.light_mode,
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          size: 24.0,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -639,16 +654,23 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                         child: Text(
                                           'Edit Profile',
                                           style: FlutterFlowTheme.of(context)
-                                              .titleSmall,
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
                                         ),
                                       ),
-                                      const Expanded(
+                                      Expanded(
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.90, 0.00),
+                                              const AlignmentDirectional(0.90, 0.00),
                                           child: Icon(
                                             Icons.arrow_forward_ios,
-                                            color: Color(0xFF95A1AC),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                             size: 18.0,
                                           ),
                                         ),
@@ -698,16 +720,23 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                       child: Text(
                                         'Change Password',
                                         style: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
                                       ),
                                     ),
-                                    const Expanded(
+                                    Expanded(
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.90, 0.00),
+                                            const AlignmentDirectional(0.90, 0.00),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
-                                          color: Color(0xFF95A1AC),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
                                           size: 18.0,
                                         ),
                                       ),
@@ -742,13 +771,12 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Colors.white,
+                                color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
                                       fontFamily: 'Inter',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context).info,
                                     ),
                                 elevation: 3.0,
                                 borderSide: const BorderSide(

@@ -94,7 +94,7 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
             elevation: 8.0,
             child: Icon(
               Icons.add,
-              color: FlutterFlowTheme.of(context).primaryText,
+              color: FlutterFlowTheme.of(context).info,
               size: 30.0,
             ),
           ),
@@ -105,7 +105,7 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
               'Passwords',
               style: FlutterFlowTheme.of(context).displaySmall.override(
                     fontFamily: 'Readex Pro',
-                    color: FlutterFlowTheme.of(context).tertiary,
+                    color: FlutterFlowTheme.of(context).info,
                   ),
             ),
             actions: const [],

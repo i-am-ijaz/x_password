@@ -151,7 +151,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).tertiary,
+                              color: FlutterFlowTheme.of(context).primaryText,
                             ),
                         keyboardType: TextInputType.emailAddress,
                         validator: _model.emailAddressControllerValidator
@@ -238,7 +238,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).tertiary,
+                              color: FlutterFlowTheme.of(context).primaryText,
                             ),
                         validator: _model.passwordControllerValidator
                             .asValidator(context),
@@ -324,7 +324,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).tertiary,
+                              color: FlutterFlowTheme.of(context).primaryText,
                             ),
                         validator: _model.confirmPasswordControllerValidator
                             .asValidator(context),
@@ -374,7 +374,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
-                          color: FlutterFlowTheme.of(context).tertiary,
+                          color: FlutterFlowTheme.of(context).info,
                         ),
                     elevation: 4.0,
                     borderSide: const BorderSide(
@@ -395,7 +395,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                         child: Text(
                           'Already have an account?',
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context).info,
+                                  ),
                         ),
                       ),
                       FFButtonWidget(
@@ -434,53 +438,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 10.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      GoRouter.of(context).prepareAuthEvent();
-                      final user = await authManager.signInAnonymously(context);
-                      if (user == null) {
-                        return;
-                      }
-
-                      await currentUserReference!.update(createUsersRecordData(
-                        displayName: 'Friend',
-                        isGuest: true,
-                        userRole: 'Geek Master',
-                      ));
-
-                      context.pushNamedAuth(
-                        'passwords',
-                        context.mounted,
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.bottomToTop,
-                            duration: Duration(milliseconds: 250),
-                          ),
-                        },
-                      );
-                    },
-                    text: 'Continue as Guest',
-                    options: FFButtonOptions(
-                      width: 200.0,
-                      height: 55.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      textStyle: FlutterFlowTheme.of(context).titleSmall,
-                      elevation: 4.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                   ),
                 ),
               ],
