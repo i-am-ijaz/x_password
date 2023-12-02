@@ -240,15 +240,15 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (widget.password != null) {
-                      await PasswordsRecord.createDoc(currentUserReference!)
-                          .set(createPasswordsRecordData(
+                      await widget.password!.reference
+                          .update(createPasswordsRecordData(
                         webAddress: '',
                         usernameEmail: '',
                         password: '',
                       ));
                     } else {
-                      await widget.password!.reference
-                          .update(createPasswordsRecordData(
+                      await PasswordsRecord.createDoc(currentUserReference!)
+                          .set(createPasswordsRecordData(
                         webAddress: '',
                         usernameEmail: '',
                         password: '',
