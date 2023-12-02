@@ -239,12 +239,11 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    if (_model.formKey.currentState == null ||
+                        !_model.formKey.currentState!.validate()) {
+                      return;
+                    }
                     if (widget.password != null) {
-                      if (_model.formKey.currentState == null ||
-                          !_model.formKey.currentState!.validate()) {
-                        return;
-                      }
-
                       await widget.password!.reference
                           .update(createPasswordsRecordData(
                         webAddress: _model.webAddressFieldController.text,
@@ -252,11 +251,6 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                         password: _model.passwordFieldController.text,
                       ));
                     } else {
-                      if (_model.formKey.currentState == null ||
-                          !_model.formKey.currentState!.validate()) {
-                        return;
-                      }
-
                       await PasswordsRecord.createDoc(currentUserReference!)
                           .set(createPasswordsRecordData(
                         webAddress: _model.webAddressFieldController.text,
