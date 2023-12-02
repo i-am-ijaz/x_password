@@ -233,7 +233,7 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
               padding: const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
-                  if (widget.password!.hasPassword()) {
+                  if (widget.password != null) {
                     await PasswordsRecord.createDoc(currentUserReference!)
                         .set(createPasswordsRecordData(
                       webAddress: '',
@@ -251,7 +251,7 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
 
                   context.pushNamed('passwords');
                 },
-                text: widget.password!.hasPassword() ? 'Save' : 'Create',
+                text: widget.password != null ? 'Save' : 'Create',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 55.0,
