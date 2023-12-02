@@ -72,7 +72,7 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
         iconTheme: IconThemeData(color: FlutterFlowTheme.of(context).info),
         automaticallyImplyLeading: true,
         title: Text(
-          widget.password!.hasWebAddress() ? 'Edit' : 'Create',
+          widget.password != null ? 'Edit' : 'Create',
           style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Readex Pro',
                 color: FlutterFlowTheme.of(context).tertiary,
