@@ -145,6 +145,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             userPhoto: params.getParam(
                 'userPhoto', ParamType.DocumentReference, false, ['users']),
           ),
+        ),
+        FFRoute(
+          name: 'generator',
+          path: '/generator',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'generator')
+              : const GeneratorWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

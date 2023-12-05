@@ -128,6 +128,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'passwords': const PasswordsWidget(),
       'myProfile': const MyProfileWidget(),
+      'generator': const GeneratorWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -168,6 +169,18 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: '',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.group_outlined,
+              size: 24.0,
+            ),
+            activeIcon: Icon(
+              Icons.autorenew_rounded,
+              size: 24.0,
+            ),
+            label: 'Generator',
             tooltip: '',
           )
         ],

@@ -75,7 +75,7 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
           widget.password != null ? 'Edit' : 'Create',
           style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Readex Pro',
-                color: FlutterFlowTheme.of(context).tertiary,
+                color: FlutterFlowTheme.of(context).primaryText,
               ),
         ),
         actions: const [],
