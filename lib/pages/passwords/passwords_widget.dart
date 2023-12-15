@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'passwords_model.dart';
 export 'passwords_model.dart';
@@ -142,6 +143,15 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                   }
                   List<PasswordsRecord> listViewPasswordsRecordList =
                       snapshot.data!;
+                  if (listViewPasswordsRecordList.isEmpty) {
+                    return Center(
+                      child: SvgPicture.asset(
+                        'assets/images/undraw_no_data_re_kwbl.svg',
+                        width: MediaQuery.sizeOf(context).width * 0.8,
+                        height: MediaQuery.sizeOf(context).height * 0.5,
+                      ),
+                    );
+                  }
                   return ListView.builder(
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.vertical,
