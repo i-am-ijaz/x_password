@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/action_sheet_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -169,6 +170,23 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                                 'password': listViewPasswordsRecord,
                               },
                             );
+                          },
+                          onLongPress: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: ActionSheetWidget(
+                                    password: listViewPasswordsRecord,
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
