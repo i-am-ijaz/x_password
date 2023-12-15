@@ -67,7 +67,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               ).image,
             ),
           ),
-          alignment: const AlignmentDirectional(0.00, 0.00),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -351,7 +351,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
@@ -362,7 +362,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -406,7 +406,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-0.83, 0.00),
+                            alignment: const AlignmentDirectional(-0.83, 0.0),
                             child: Container(
                               width: 22.0,
                               height: 22.0,
