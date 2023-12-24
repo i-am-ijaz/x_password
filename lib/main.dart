@@ -143,6 +143,8 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         selectedItemColor: const Color(0xFF4B39EF),
         unselectedItemColor: const Color(0x98939393),
+        selectedIconTheme: const IconThemeData(color: Color(0xFF4B39EF)),
+        unselectedIconTheme: const IconThemeData(color: Color(0x98939393)),
         showSelectedLabels: false,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
@@ -157,7 +159,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: '',
-            tooltip: '',
+            tooltip: 'Passwords',
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -168,8 +170,8 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.autorenew_rounded,
               size: 24.0,
             ),
-            label: 'Generator',
-            tooltip: '',
+            label: '',
+            tooltip: 'Generater',
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -181,7 +183,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: '',
-            tooltip: '',
+            tooltip: 'Profile',
           ),
         ],
       ),
