@@ -25,7 +25,9 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
     super.initState();
     _model = createModel(context, () => GeneratorModel());
 
-    _model.contentFieldController ??= TextEditingController();
+    _model.contentFieldController ??= TextEditingController(
+      text: _model.generatedContent,
+    );
     _model.contentFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -90,7 +92,11 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 0.0, 0.0),
+                            16.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                          ),
                           child: TextFormField(
                             controller: _model.contentFieldController,
                             focusNode: _model.contentFieldFocusNode,
@@ -134,8 +140,12 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 24.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0,
+                          0.0,
+                          24.0,
+                          0.0,
+                        ),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -166,7 +176,7 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                                 size: 24.0,
                               ),
                               onPressed: () {
-                                print('regenerateIconButton pressed ...');
+                                _model.onGenerate();
                               },
                             ),
                           ],
@@ -177,7 +187,8 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,7 +202,9 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                       children: [
                         FlutterFlowRadioButton(
                           options: ['Password', 'Username'].toList(),
-                          onChanged: (val) => setState(() {}),
+                          onChanged: (val) => setState(() {
+                            _model.onGenerate();
+                          }),
                           controller: _model.radioButtonValueController ??=
                               FormFieldController<String>('Password'),
                           optionHeight: 32.0,
@@ -213,179 +226,187 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                   ],
                 ),
               ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 12.0, 0.0),
-                              child: Text(
-                                'Length',
+              if (_model.radioButtonValue == 'Password')
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          24.0, 0.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 12.0, 0.0),
+                                child: Text(
+                                  'Length',
+                                  style:
+                                      FlutterFlowTheme.of(context).titleLarge,
+                                ),
+                              ),
+                              Text(
+                                (_model.sliderValue ??= 8.0).toInt().toString(),
                                 style: FlutterFlowTheme.of(context).titleLarge,
                               ),
-                            ),
-                            Text(
-                              '0',
-                              style: FlutterFlowTheme.of(context).titleLarge,
-                            ),
-                          ],
+                            ],
+                          ),
+                          Slider(
+                            activeColor: FlutterFlowTheme.of(context).primary,
+                            inactiveColor:
+                                FlutterFlowTheme.of(context).alternate,
+                            min: 8.0,
+                            max: 32.0,
+                            value: _model.sliderValue ??= 8.0,
+                            onChanged: (newValue) {
+                              newValue =
+                                  double.parse(newValue.toStringAsFixed(2));
+                              setState(() => _model.sliderValue = newValue);
+                              _model.onGenerate();
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          10.0, 0.0, 0.0, 0.0),
+                      child: Theme(
+                        data: ThemeData(
+                          checkboxTheme: const CheckboxThemeData(
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          unselectedWidgetColor:
+                              FlutterFlowTheme.of(context).secondaryText,
                         ),
-                        Slider(
-                          activeColor: FlutterFlowTheme.of(context).primary,
-                          inactiveColor: FlutterFlowTheme.of(context).alternate,
-                          min: 8.0,
-                          max: 32.0,
-                          value: _model.sliderValue ??= 8.0,
-                          onChanged: (newValue) {
-                            newValue =
-                                double.parse(newValue.toStringAsFixed(2));
-                            setState(() => _model.sliderValue = newValue);
+                        child: CheckboxListTile(
+                          value: _model.capitalListTileValue ??= true,
+                          onChanged: (newValue) async {
+                            setState(
+                                () => _model.capitalListTileValue = newValue!);
+                            _model.onGenerate();
                           },
+                          title: Text(
+                            'A-Z',
+                            style: FlutterFlowTheme.of(context).titleLarge,
+                          ),
+                          tileColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          activeColor: FlutterFlowTheme.of(context).primary,
+                          checkColor: FlutterFlowTheme.of(context).info,
+                          dense: false,
+                          controlAffinity: ListTileControlAffinity.trailing,
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    child: Theme(
-                      data: ThemeData(
-                        checkboxTheme: const CheckboxThemeData(
-                          visualDensity: VisualDensity.compact,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        unselectedWidgetColor:
-                            FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                      child: CheckboxListTile(
-                        value: _model.checkboxListTileValue1 ??= true,
-                        onChanged: (newValue) async {
-                          setState(
-                              () => _model.checkboxListTileValue1 = newValue!);
-                        },
-                        title: Text(
-                          'A-Z',
-                          style: FlutterFlowTheme.of(context).titleLarge,
-                        ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        activeColor: FlutterFlowTheme.of(context).primary,
-                        checkColor: FlutterFlowTheme.of(context).info,
-                        dense: false,
-                        controlAffinity: ListTileControlAffinity.trailing,
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    child: Theme(
-                      data: ThemeData(
-                        checkboxTheme: const CheckboxThemeData(
-                          visualDensity: VisualDensity.compact,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          10.0, 0.0, 0.0, 0.0),
+                      child: Theme(
+                        data: ThemeData(
+                          checkboxTheme: const CheckboxThemeData(
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          unselectedWidgetColor:
+                              FlutterFlowTheme.of(context).secondaryText,
                         ),
-                        unselectedWidgetColor:
-                            FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                      child: CheckboxListTile(
-                        value: _model.checkboxListTileValue2 ??= true,
-                        onChanged: (newValue) async {
-                          setState(
-                              () => _model.checkboxListTileValue2 = newValue!);
-                        },
-                        title: Text(
-                          'a-z',
-                          style: FlutterFlowTheme.of(context).titleLarge,
+                        child: CheckboxListTile(
+                          value: _model.smallListTileValue ??= true,
+                          onChanged: (newValue) async {
+                            setState(
+                                () => _model.smallListTileValue = newValue!);
+                            _model.onGenerate();
+                          },
+                          title: Text(
+                            'a-z',
+                            style: FlutterFlowTheme.of(context).titleLarge,
+                          ),
+                          tileColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          activeColor: FlutterFlowTheme.of(context).primary,
+                          checkColor: FlutterFlowTheme.of(context).info,
+                          dense: false,
+                          controlAffinity: ListTileControlAffinity.trailing,
                         ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        activeColor: FlutterFlowTheme.of(context).primary,
-                        checkColor: FlutterFlowTheme.of(context).info,
-                        dense: false,
-                        controlAffinity: ListTileControlAffinity.trailing,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    child: Theme(
-                      data: ThemeData(
-                        checkboxTheme: const CheckboxThemeData(
-                          visualDensity: VisualDensity.compact,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        unselectedWidgetColor:
-                            FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                      child: CheckboxListTile(
-                        value: _model.checkboxListTileValue3 ??= true,
-                        onChanged: (newValue) async {
-                          setState(
-                              () => _model.checkboxListTileValue3 = newValue!);
-                        },
-                        title: Text(
-                          '0-9',
-                          style: FlutterFlowTheme.of(context).titleLarge,
-                        ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        activeColor: FlutterFlowTheme.of(context).primary,
-                        checkColor: FlutterFlowTheme.of(context).info,
-                        dense: false,
-                        controlAffinity: ListTileControlAffinity.trailing,
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    child: Theme(
-                      data: ThemeData(
-                        checkboxTheme: const CheckboxThemeData(
-                          visualDensity: VisualDensity.compact,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          10.0, 0.0, 0.0, 0.0),
+                      child: Theme(
+                        data: ThemeData(
+                          checkboxTheme: const CheckboxThemeData(
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          unselectedWidgetColor:
+                              FlutterFlowTheme.of(context).secondaryText,
                         ),
-                        unselectedWidgetColor:
-                            FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                      child: CheckboxListTile(
-                        value: _model.checkboxListTileValue4 ??= true,
-                        onChanged: (newValue) async {
-                          setState(
-                              () => _model.checkboxListTileValue4 = newValue!);
-                        },
-                        title: Text(
-                          '!@#\$%^&*',
-                          style: FlutterFlowTheme.of(context).titleLarge,
+                        child: CheckboxListTile(
+                          value: _model.numbersListTileValue ??= true,
+                          onChanged: (newValue) async {
+                            setState(
+                                () => _model.numbersListTileValue = newValue!);
+                            _model.onGenerate();
+                          },
+                          title: Text(
+                            '0-9',
+                            style: FlutterFlowTheme.of(context).titleLarge,
+                          ),
+                          tileColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          activeColor: FlutterFlowTheme.of(context).primary,
+                          checkColor: FlutterFlowTheme.of(context).info,
+                          dense: false,
+                          controlAffinity: ListTileControlAffinity.trailing,
                         ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        activeColor: FlutterFlowTheme.of(context).primary,
-                        checkColor: FlutterFlowTheme.of(context).info,
-                        dense: false,
-                        controlAffinity: ListTileControlAffinity.trailing,
                       ),
                     ),
-                  ),
-                ],
-              ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          10.0, 0.0, 0.0, 0.0),
+                      child: Theme(
+                        data: ThemeData(
+                          checkboxTheme: const CheckboxThemeData(
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          unselectedWidgetColor:
+                              FlutterFlowTheme.of(context).secondaryText,
+                        ),
+                        child: CheckboxListTile(
+                          value: _model.symbolsListTileValue ??= true,
+                          onChanged: (newValue) async {
+                            setState(
+                                () => _model.symbolsListTileValue = newValue!);
+                            _model.onGenerate();
+                          },
+                          title: Text(
+                            '!@#\$%^&*',
+                            style: FlutterFlowTheme.of(context).titleLarge,
+                          ),
+                          tileColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          activeColor: FlutterFlowTheme.of(context).primary,
+                          checkColor: FlutterFlowTheme.of(context).info,
+                          dense: false,
+                          controlAffinity: ListTileControlAffinity.trailing,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
             ],
           ),
         ),
