@@ -161,7 +161,7 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
                                 size: 24.0,
                               ),
                               onPressed: () {
-                                print('copyIconButton pressed ...');
+                                _model.copyToClipboard();
                               },
                             ),
                             FlutterFlowIconButton(

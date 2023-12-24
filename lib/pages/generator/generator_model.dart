@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:word_generator/word_generator.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -181,5 +182,9 @@ class GeneratorModel extends FlutterFlowModel<GeneratorWidget> {
     return name.split(' ').first + number;
   }
 
-  void copyToClipboard() {}
+  Future<void> copyToClipboard() async {
+    await Clipboard.setData(
+      ClipboardData(text: generatedContent),
+    );
+  }
 }
