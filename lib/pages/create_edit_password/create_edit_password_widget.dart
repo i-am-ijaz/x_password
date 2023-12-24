@@ -1,3 +1,5 @@
+import 'package:x_password/services/encrption_service.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -39,8 +41,11 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
         TextEditingController(text: widget.password?.usernameEmail);
     _model.usernameEmailFieldFocusNode ??= FocusNode();
 
+    final decryptedPwd = widget.password?.password != null
+        ? EncryptionService.decrypt(widget.password!.password)
+        : '';
     _model.passwordFieldController ??=
-        TextEditingController(text: widget.password?.password);
+        TextEditingController(text: decryptedPwd);
     _model.passwordFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -90,7 +95,8 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 child: TextFormField(
                   controller: _model.webAddressFieldController,
                   focusNode: _model.webAddressFieldFocusNode,
@@ -134,7 +140,8 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 child: TextFormField(
                   controller: _model.usernameEmailFieldController,
                   focusNode: _model.usernameEmailFieldFocusNode,
@@ -179,7 +186,8 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 child: TextFormField(
                   controller: _model.passwordFieldController,
                   focusNode: _model.passwordFieldFocusNode,
@@ -236,27 +244,39 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(24.0, 80.0, 24.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (_model.formKey.currentState == null ||
                         !_model.formKey.currentState!.validate()) {
                       return;
                     }
+
+                    // Encrypt password with Encryption Service
+                    final encryptedPwd = EncryptionService.encrypt(
+                      _model.passwordFieldController.text,
+                    );
+
                     if (widget.password != null) {
-                      await widget.password!.reference
-                          .update(createPasswordsRecordData(
-                        webAddress: _model.webAddressFieldController.text,
-                        usernameEmail: _model.usernameEmailFieldController.text,
-                        password: _model.passwordFieldController.text,
-                      ));
+                      await widget.password!.reference.update(
+                        createPasswordsRecordData(
+                          webAddress: _model.webAddressFieldController.text,
+                          usernameEmail:
+                              _model.usernameEmailFieldController.text,
+                          password: encryptedPwd,
+                        ),
+                      );
                     } else {
                       await PasswordsRecord.createDoc(currentUserReference!)
-                          .set(createPasswordsRecordData(
-                        webAddress: _model.webAddressFieldController.text,
-                        usernameEmail: _model.usernameEmailFieldController.text,
-                        password: _model.passwordFieldController.text,
-                      ));
+                          .set(
+                        createPasswordsRecordData(
+                          webAddress: _model.webAddressFieldController.text,
+                          usernameEmail:
+                              _model.usernameEmailFieldController.text,
+                          password: encryptedPwd,
+                        ),
+                      );
                     }
 
                     context.pushNamed('passwords');
@@ -265,10 +285,10 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        24.0, 0.0, 24.0, 0.0),
+                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
