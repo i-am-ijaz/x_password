@@ -127,8 +127,8 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'passwords': const PasswordsWidget(),
-      'myProfile': const MyProfileWidget(),
       'generator': const GeneratorWidget(),
+      'myProfile': const MyProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -149,14 +149,26 @@ class _NavBarPageState extends State<NavBarPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.chat_bubble_outline,
+              Icons.password_outlined,
               size: 24.0,
             ),
             activeIcon: Icon(
-              Icons.chat_bubble_rounded,
+              Icons.password_rounded,
               size: 24.0,
             ),
             label: '',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.autorenew_outlined,
+              size: 24.0,
+            ),
+            activeIcon: Icon(
+              Icons.autorenew_rounded,
+              size: 24.0,
+            ),
+            label: 'Generator',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -171,18 +183,6 @@ class _NavBarPageState extends State<NavBarPage> {
             label: '',
             tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.group_outlined,
-              size: 24.0,
-            ),
-            activeIcon: Icon(
-              Icons.autorenew_rounded,
-              size: 24.0,
-            ),
-            label: 'Generator',
-            tooltip: '',
-          )
         ],
       ),
     );
