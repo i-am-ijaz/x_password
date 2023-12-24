@@ -46,6 +46,7 @@ class GeneratorModel extends FlutterFlowModel<GeneratorWidget> {
   @override
   void initState(BuildContext context) {
     contentFieldControllerValidator = _contentFieldControllerValidator;
+    radioButtonValueController ??= FormFieldController<String>('Password');
     onGenerate();
   }
 
