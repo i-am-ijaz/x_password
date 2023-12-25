@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:x_password/services/encrption_service.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
@@ -32,6 +34,12 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CreateEditPasswordModel());
+    final decryptedPwd = widget.password?.password != null
+        ? EncryptionService.decrypt(widget.password!.password)
+        : '';
+    _model.passwordFieldController ??= TextEditingController(
+      text: decryptedPwd,
+    );
 
     _model.webAddressFieldController ??=
         TextEditingController(text: widget.password?.webAddress);
@@ -41,14 +49,11 @@ class _CreateEditPasswordWidgetState extends State<CreateEditPasswordWidget> {
         TextEditingController(text: widget.password?.usernameEmail);
     _model.usernameEmailFieldFocusNode ??= FocusNode();
 
-    final decryptedPwd = widget.password?.password != null
-        ? EncryptionService.decrypt(widget.password!.password)
-        : '';
-    _model.passwordFieldController ??=
-        TextEditingController(text: decryptedPwd);
     _model.passwordFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {});
+    });
   }
 
   @override

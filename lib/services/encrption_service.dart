@@ -8,9 +8,9 @@ class EncryptionService {
 
   static Future<void> init() async {
     final publicKey =
-        await parseKeyFromFile<RSAPublicKey>('assets/private/public.pem');
+        await parseKeyFromFile<RSAPublicKey>('.private/public.pem');
     final privateKey =
-        await parseKeyFromFile<RSAPrivateKey>('assets/private/private.pem');
+        await parseKeyFromFile<RSAPrivateKey>('.private/private.pem');
     _encrypter = Encrypter(
       RSA(
         publicKey: publicKey,
