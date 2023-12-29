@@ -57,7 +57,7 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primary,
         iconTheme: IconThemeData(color: FlutterFlowTheme.of(context).info),
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         title: Text(
           'Generate',
           style: FlutterFlowTheme.of(context).displaySmall.override(

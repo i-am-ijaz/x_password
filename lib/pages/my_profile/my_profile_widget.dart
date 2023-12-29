@@ -116,7 +116,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primary,
             iconTheme: IconThemeData(color: FlutterFlowTheme.of(context).info),
-            automaticallyImplyLeading: true,
+            automaticallyImplyLeading: false,
             title: Text(
               'Profile',
               style: FlutterFlowTheme.of(context).displaySmall.override(

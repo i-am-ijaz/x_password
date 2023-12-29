@@ -250,7 +250,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       return;
                     }
 
-                    context.pushNamedAuth('passwords', context.mounted);
+                    context.goNamedAuth('passwords', context.mounted);
                   },
                   text: 'Log In',
                   options: FFButtonOptions(
