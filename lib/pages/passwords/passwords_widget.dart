@@ -150,10 +150,13 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                       snapshot.data!;
                   if (listViewPasswordsRecordList.isEmpty) {
                     return Center(
-                      child: SvgPicture.asset(
-                        'assets/images/undraw_no_data_re_kwbl.svg',
-                        width: MediaQuery.sizeOf(context).width * 0.8,
-                        height: MediaQuery.sizeOf(context).height * 0.5,
+                      child: Padding(
+                        padding: const EdgeInsets.all(40.0),
+                        child: SvgPicture.asset(
+                          'assets/images/undraw_no_data_re_kwbl.svg',
+                          width: MediaQuery.sizeOf(context).width * 0.8,
+                          height: MediaQuery.sizeOf(context).height * 0.5,
+                        ),
                       ),
                     );
                   }
