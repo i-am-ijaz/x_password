@@ -86,7 +86,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
               child: TextFormField(
                 controller: _model.emailAddressController,
                 focusNode: _model.emailAddressFocusNode,
@@ -126,8 +127,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   ),
                   filled: true,
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  contentPadding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+                  contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                      20.0, 24.0, 20.0, 24.0),
                 ),
                 style: FlutterFlowTheme.of(context).titleSmall,
                 keyboardType: TextInputType.emailAddress,
@@ -136,7 +137,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   if (_model.emailAddressController.text.isEmpty) {
@@ -159,13 +161,14 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 options: FFButtonOptions(
                   width: 230.0,
                   height: 60.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryText,
+                  color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lexend Deca',
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).info,
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),

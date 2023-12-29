@@ -20,7 +20,7 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
-await  EncryptionService.init();
+  await EncryptionService.init();
 
   runApp(const MyApp());
 }
@@ -38,7 +38,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
   late Stream<BaseAuthUser> userStream;
 
@@ -73,11 +72,6 @@ class _MyAppState extends State<MyApp> {
     setState(() => _locale = createLocale(language));
   }
 
-  void setThemeMode(ThemeMode mode) => setState(() {
-        _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
-      });
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -90,15 +84,10 @@ class _MyAppState extends State<MyApp> {
       ],
       locale: _locale,
       supportedLocales: const [Locale('en', '')],
-      theme: ThemeData(
-        brightness: Brightness.light,
-        scrollbarTheme: const ScrollbarThemeData(),
-      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         scrollbarTheme: const ScrollbarThemeData(),
       ),
-      themeMode: _themeMode,
       routerConfig: _router,
     );
   }

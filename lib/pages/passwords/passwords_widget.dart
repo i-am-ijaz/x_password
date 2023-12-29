@@ -1,3 +1,7 @@
+import 'dart:developer';
+
+import 'package:x_password/services/encrption_service.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/action_sheet_widget.dart';
@@ -141,6 +145,7 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                       ),
                     );
                   }
+
                   List<PasswordsRecord> listViewPasswordsRecordList =
                       snapshot.data!;
                   if (listViewPasswordsRecordList.isEmpty) {
@@ -248,17 +253,23 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 4.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 4.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          await Clipboard.setData(ClipboardData(
-                                              text: listViewPasswordsRecord
-                                                  .password));
+                                          final password =
+                                              EncryptionService.decrypt(
+                                            listViewPasswordsRecord.password,
+                                          );
+                                          await Clipboard.setData(
+                                            ClipboardData(text: password),
+                                          );
+                                          log(password);
                                         },
                                         child: Icon(
                                           Icons.password,

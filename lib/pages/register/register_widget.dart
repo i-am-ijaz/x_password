@@ -58,40 +58,39 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primary,
-      body: Align(
-        alignment: const AlignmentDirectional(-0.14, -0.08),
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: const Color(0x19444D59),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/launchScreen@3x.png',
-              ).image,
-            ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: const Color(0x19444D59),
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: Image.asset(
+              'assets/images/launchScreen@3x.png',
+            ).image,
           ),
-          child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 90.0, 0.0, 70.0),
-            child: SingleChildScrollView(
+        ),
+        alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 90.0, 0.0, 70.0),
+          child: SingleChildScrollView(
+            child: SizedBox(
+              width: 400.0,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
-                    child: Image.asset(
-                      'assets/images/logoGeekMessaging.png',
-                      width: 160.0,
-                      height: 140.0,
-                      fit: BoxFit.cover,
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 20.0, 0.0, 24.0),
+                    child: Text(
+                      'X PASSWORD',
+                      style: FlutterFlowTheme.of(context).titleLarge,
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 12.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        40.0, 0.0, 40.0, 12.0),
                     child: Container(
                       width: double.infinity,
                       height: 50.0,
@@ -164,8 +163,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        40.0, 0.0, 40.0, 20.0),
                     child: Container(
                       width: double.infinity,
                       height: 50.0,
@@ -251,8 +250,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 20.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        40.0, 0.0, 40.0, 20.0),
                     child: Container(
                       width: double.infinity,
                       height: 50.0,
@@ -373,10 +372,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     options: FFButtonOptions(
                       width: 300.0,
                       height: 55.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -392,8 +391,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 24.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,

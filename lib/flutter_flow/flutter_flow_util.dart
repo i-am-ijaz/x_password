@@ -11,7 +11,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../main.dart';
 
-
 export 'lat_lng.dart';
 export 'place.dart';
 export 'uploaded_file.dart';
@@ -234,9 +233,6 @@ extension StringDocRef on String {
 
 void setAppLanguage(BuildContext context, String language) =>
     MyApp.of(context).setLocale(language);
-
-void setDarkModeSetting(BuildContext context, ThemeMode themeMode) =>
-    MyApp.of(context).setThemeMode(themeMode);
 
 void showSnackbar(
   BuildContext context,
