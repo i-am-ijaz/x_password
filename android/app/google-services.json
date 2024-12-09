@@ -12,7 +12,20 @@
           "package_name": "com.xmartandroid.xpassword"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "815239986420-e080uq04up47s65a2p42002pob47pg19.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xmartandroid.xpassword",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "815239986420-qu04v97pqsvagj8ivivhfreqeg328jjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCxHTLFET5Ev5U9tzdufuvGTuKRmvgacq0"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815239986420-qu04v97pqsvagj8ivivhfreqeg328jjl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "815239986420-d748f4oaq1uamll3pucef4q2g0gkhd7l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.xmartandroid.xpassword"
+              }
+            }
+          ]
         }
       }
     }

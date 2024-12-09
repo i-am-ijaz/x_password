@@ -80,7 +80,7 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
             onPressed: () async {
               context.pushNamed(
                 'createEditPassword',
-                queryParameters: {
+                pathParameters: {
                   'password': serializeParam(
                     null,
                     ParamType.Document,
@@ -178,7 +178,7 @@ class _PasswordsWidgetState extends State<PasswordsWidget> {
                           onTap: () async {
                             context.pushNamed(
                               'createEditPassword',
-                              queryParameters: {
+                              pathParameters: {
                                 'password': serializeParam(
                                   listViewPasswordsRecord,
                                   ParamType.Document,

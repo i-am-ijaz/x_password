@@ -67,7 +67,7 @@ class _ActionSheetWidgetState extends State<ActionSheetWidget> {
                 }
                 context.pushNamed(
                   'createEditPassword',
-                  queryParameters: {
+                  pathParameters: {
                     'password': serializeParam(
                       widget.password,
                       ParamType.Document,

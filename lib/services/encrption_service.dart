@@ -7,10 +7,12 @@ class EncryptionService {
   static late Encrypter _encrypter;
 
   static Future<void> init() async {
-    final publicKey =
-        await parseKeyFromFile<RSAPublicKey>('.private/public.pem');
-    final privateKey =
-        await parseKeyFromFile<RSAPrivateKey>('.private/private.pem');
+    final publicKey = await parseKeyFromFile<RSAPublicKey>(
+      'assets/public.pem',
+    );
+    final privateKey = await parseKeyFromFile<RSAPrivateKey>(
+      'assets/private.pem',
+    );
     _encrypter = Encrypter(
       RSA(
         publicKey: publicKey,

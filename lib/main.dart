@@ -1,7 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:x_password/firebase_options.dart';
 
 import 'package:x_password/services/encrption_service.dart';
 
@@ -17,7 +19,11 @@ import 'index.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
-  await initFirebase();
+  // await initFirebase();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   await FlutterFlowTheme.initialize();
 
